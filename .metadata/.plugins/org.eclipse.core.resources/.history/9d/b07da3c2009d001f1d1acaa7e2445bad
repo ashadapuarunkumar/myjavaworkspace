@@ -1,0 +1,50 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class Getallemployees2 {
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		String driver,url,user,password;
+		driver="com.mysql.cj.jdbc.Driver";
+		url="jdbc:mysql://localhost:3306/edb12634";
+		user="root";
+		password="root";
+		
+		String selectQuery = "select * from employe where empname=?";
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter emp Name: ");
+		String name=in.next();
+		
+		
+		//1.Loading Driver
+		Class.forName(driver);
+		
+		//2.Establish connection
+		Connection con=DriverManager.getConnection(url,user,password);
+		
+		//3.Create  prepation Statement 
+		Statement st=con.prepareStatement(selectQuery);
+		
+		//4.proccess thet quary( select)
+		ResultSet rs=st.executeQuery(selectQuery);
+		if (rs.next()) {
+			System.out.println(rs.getInt("idemploye"));
+			System.out.println(rs.getString("empname"));
+			System.out.println(rs.getString("empemail"));
+			System.out.println(rs.getLong("empmobile"));
+			System.out.println(rs.getInt("salary"));
+			System.out.println("..............................");
+		}
+		else {
+			System.out.println("Employee not found......");
+		}
+		rs.close();
+		st.close();
+		con.close();
+		
+		
+	}
+}

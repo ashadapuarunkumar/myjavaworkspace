@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;forEachloopDemo&apos; to &apos;forEachMethodDemo&apos;&#x0D;&#x0A;- Original project: &apos;Java8Fatures&apos;&#x0D;&#x0A;- Original element: &apos;forEachloopDemo&apos;&#x0D;&#x0A;- Renamed element: &apos;forEachMethodDemo&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;forEachloopDemo&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{forEachloopDemo.java[forEachloopDemo" matchStrategy="1" name="forEachMethodDemo" qualified="false" references="true" similarDeclarations="false" stamp="1729592210456" textual="false" version="1.0"/>
+</session>

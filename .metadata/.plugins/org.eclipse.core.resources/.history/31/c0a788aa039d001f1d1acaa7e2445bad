@@ -1,0 +1,57 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class Getallemployees3 {
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		String driver,url,user,password;
+		driver="com.mysql.cj.jdbc.Driver";
+		url="jdbc:mysql://localhost:3306/edb12634";
+		user="root";
+		password="root";
+		
+		String insertQuery = "select * from employe values(?,?,?,?,?)";
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter idemploye: ");
+		int idemploye=sc.nextInt();
+		
+		System.out.println("Enter emp name: ");
+		String name=sc.next();
+		
+		System.out.println("Enter emp email: ");
+		String email=sc.next();
+		
+		System.out.println("Enter emp mobile: ");
+		Long mobile=sc.nextLong();
+		
+		System.out.println("Enter emp Salary: ");
+		int salary=sc.nextInt();
+		sc.close();
+		
+		//1.Loading Driver
+		//amarClass.forName(driver);
+		
+		//2.Establish connection
+		Connection con=DriverManager.getConnection(url,user,password);
+		
+		//3.Create  prepation Statement 
+		PreparedStatement st=con.prepareStatement(selectQuery);
+		st.setString(1,name);
+		//4.proccess thet quary( select)
+		ResultSet rs=st.executeQuery();
+		if(rs.next()) {
+			System.out.println("..............................");
+		}else {
+			System.out.println("Employee not found......");
+		}
+		rs.close();
+		st.close();
+		con.close();
+		
+		
+	}
+}

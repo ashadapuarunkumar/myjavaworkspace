@@ -1,0 +1,18 @@
+
+public class Devara {
+	
+	int movieId;
+	String mName;
+	String mDirector;
+	
+	public Devara(int movieId, String mName, String mDirector) {
+		super();
+		this.movieId = movieId;
+		this.mName = mName;
+		this.mDirector = mDirector;
+	}
+//	public String toString() {
+//		return movieId+"\t"+mName+"\t"+mDirector ;
+//	}
+
+}

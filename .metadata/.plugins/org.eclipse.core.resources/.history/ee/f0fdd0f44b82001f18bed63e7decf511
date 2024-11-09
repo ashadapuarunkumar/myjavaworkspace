@@ -1,0 +1,20 @@
+
+public class MovieTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Devara m1=new Devara(11,"kalki","Rgv");
+		Devara m2=new Devara(22,"pokiri","shiva");
+		Devara m3=new Devara(22,"pokiri","shiva");
+		
+		System.out.println(m1==m2);
+		System.out.println(m2==m3);
+		System.out.println(m1==m3);
+		
+		System.out.println(m1.hashCode());
+		System.out.println(m2.hashCode());
+		System.out.println(m3.hashCode());
+	
+	}
+
+}
